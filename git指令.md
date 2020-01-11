@@ -82,6 +82,8 @@
 
 
 
+
+
 `git merge $branchName` ：合并**指定分支到当前**所在的分支。
 
 `git branch -d $branchName` ：删除分支（一般要在合并完分支之后）
