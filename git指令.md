@@ -38,7 +38,7 @@
 
 `git commit --amend` ：**重新提交**，第二次提交将**代替**第一次提交的结果。最终只会有一个提交。
 
-
+　　
 
 ## Branch & checkout 分支。分支包括远程分支和本地分支
 
@@ -90,7 +90,7 @@
 
 `git branch -D $branchName`：强行删除分支，尤其适用于分支内容有了新的修改但还没有被合并的情况。 
 
-
+　　
 
 ## Pull & push
 
@@ -108,7 +108,7 @@
 
 ​    **而`git pull`则是将远程主机的最新内容拉下来后直接合并，即：`git pull = git fetch + git merge`，这样可能会产生冲突，需要手动解决。**
 
-
+　　
 
 ## Stash
 
