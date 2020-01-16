@@ -152,34 +152,35 @@ LIMIT 1;
 
 例:
 
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_price = 2.5;
 ```
 
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_name = 'fuses';
 // MySQL 执行匹配时默认不区分大小写；单引号用来限定字符串
 ```
-```sql
+```mysql
 SELECT vend_id, prod_name
 FROM products
 WHERE vend_id <> 1003;
 ```
 - 范围值检查
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_price BETWEEN 5 AND 10;
 ```
 - 空值检查
-```sql
+```mysql
 SELECT prod_name
 FROM products
 WHERE prod_price IS NULL;
+// 非空用 IS NOT NULL
 ```
 
 **在通过过滤选择出不具有特定值的行时，不会返回具有`NULL`值的行**
@@ -187,12 +188,12 @@ WHERE prod_price IS NULL;
 ## 7. 高级数据过滤
 
 - MySQL允许给出多个`WHERE`子句，需要用`AND`或者`OR`连接
-```sql
+```mysql
 SELECT prod_id, prod_price, prod_name
 FROM products
 WHERE vend_id = 1003 AND prod_price <= 10;
 ```
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE vend_id = 1002 OR vend_id = 1003 AND prod_price >= 10;
@@ -201,7 +202,7 @@ WHERE vend_id = 1002 OR vend_id = 1003 AND prod_price >= 10;
 ```
 
 - `IN`操作符
-```sql
+```mysql
 SELECT * FROM Persons
 WHERE LastName IN ('Adams','Carter')
 ```
@@ -411,11 +412,9 @@ VALUES(...), (...), (...);
 ```
 
 
-
 Tips：可以使用 `INSERT LOW_PRIORITY INTO` 来降低`INSERT`语句的优先级，这也适用于`UPDATE`和`DELETE`语句
 
-
-
+　　
 -   插入检索出的数据
 
 ```mysql
