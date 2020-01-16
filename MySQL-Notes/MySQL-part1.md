@@ -291,6 +291,7 @@ WHERE order_num = 20005;
 | `SubString(field, start, length)` | 返回从start开始长为length的子串 |
 |        `Lower() / Upper()`        |        返回串的小写/大写        |
 |        `RTrim() / LTrim()`        |      去除串右边/左边的空格      |
+| 	`REVERSE()`		    |    返回颠倒字符串的结果 |
 
 
 
@@ -330,6 +331,15 @@ WHERE Year(order_date) = 2005 AND Month(order_date) = 9;
 | :-----------: | ------------------------- |
 | `FIRST, LAST` | 返回该列的第一个/最后一个 |
 
+**MySQL 中还有一类流程控制函数**
+
+|    函数名     | 说明                      |
+| :-----------: | ------------------------- |
+| `IF(condition,t,f)` | 如果条件表达式condition是真，返回t；否则返回f |
+| `FNULL(arg1,arg2)`  | 如果arg1不是空，返回arg1，否则返回arg2    |
+| `NULLIF(arg1,arg2)` | 如果arg1=arg2返回`NULL`；否则返回arg1      |
+| `CASE WHEN[test1] THEN [result1]...ELSE [default] END`   | 如果testN是真，则返回resultN，否则返回default |
+| `CASE expr WHEN v1 THEN r1 [WHEN v2 THEN r2] [ELSE rn] END` | 如果expr值等于某个vn，则返回对应位置THEN后面的结果。如果与所有值都不相等，则返回ELSE后面的rn|
 
 
 ## 12. 汇总数据
