@@ -22,6 +22,11 @@ USE crashcourse;
 SHOW DATABASES;
 // 返回可用数据库的一个列表
 ```
+- 简单创建一个新的数据库
+```mysql
+// 注意是database不是databases
+CREATE DATABASE <name>
+```
 - 显示数据库中所有表
 ```mysql
 SHOW TABLES;
@@ -31,6 +36,8 @@ SHOW TABLES;
 SHOW COLUMNS FROM customers;
 // 等价于
 DESCRIBE customers;
+// 也可以缩写
+DESC customers;
 ```
 
 -   删除整个表
