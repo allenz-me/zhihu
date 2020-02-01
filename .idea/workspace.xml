@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="306c38fb-521f-4382-b2b6-67a6702e8479" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data-structure-python/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-structure-python/tree/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/data-structure-python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/algorithms/inversion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structure-python/tests/test_algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zhihu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zhihu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-structure-python/tests/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-structure-python/tests/test_tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-structure-python/tests/test_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-structure-python/tests/test_sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structure-python/tests/test_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-structure-python/tests/test_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structure-python/tree/BinaryIndexTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-structure-python/tree/BinaryIndexTree.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data-structure-python" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -74,9 +79,10 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_sort.SortTest&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_targetType" value="&quot;CUSTOM&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests for test_sort.SortTest.test_sort" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -94,6 +100,11 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python tests.Unittests for test_sort.MyTestCase.test_sor" />
+      <item itemvalue="Python tests.Unittests for test_sort.SortTest" />
+      <item itemvalue="Python tests.Unittests for test_sort.SortTest.test_sort" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests for test_sort.SortTest" />
@@ -115,6 +126,9 @@
       <workItem from="1578739013210" duration="140000" />
       <workItem from="1578832204418" duration="951000" />
       <workItem from="1578833183889" duration="275000" />
+      <workItem from="1578833842476" duration="120000" />
+      <workItem from="1578833985236" duration="22000" />
+      <workItem from="1579697080119" duration="6000" />
     </task>
     <servers />
   </component>

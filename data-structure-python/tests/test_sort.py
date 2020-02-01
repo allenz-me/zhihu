@@ -3,6 +3,7 @@ from random import randint
 
 from tqdm import trange
 
+from sort import sort_algorithms
 
 
 class SortTest(unittest.TestCase):

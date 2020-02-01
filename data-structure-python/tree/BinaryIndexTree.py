@@ -14,8 +14,8 @@ class BinaryIndexTree:
 
     def update(self, idx: int, val: int):
         '''将原数组idx下标更新为val, 总时间O(log n)'''
-        idx += 1
         prev = self.query(idx, idx + 1)    # 计算出原来的值
+        idx += 1
         val -= prev    # val 是要增加的值
         while idx < len(self._array):
             self._array[idx] += val
@@ -32,3 +32,9 @@ class BinaryIndexTree:
             res += self._array[idx]
             idx -= self.lowbit(idx)
         return res
+
+if __name__ == '__main__':
+    BIT = BinaryIndexTree([1, 3, 5, 7])
+    BIT.update(1, 6)    # [1, 6, 5, 7]
+    print(BIT._array)
+    print(BIT.query(0, 4))
