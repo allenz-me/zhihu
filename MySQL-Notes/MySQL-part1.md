@@ -22,6 +22,11 @@ USE crashcourse;
 SHOW DATABASES;
 // 返回可用数据库的一个列表
 ```
+- 简单创建一个新的数据库
+```mysql
+// 注意是database不是databases
+CREATE DATABASE <name>
+```
 - 显示数据库中所有表
 ```mysql
 SHOW TABLES;
@@ -31,6 +36,8 @@ SHOW TABLES;
 SHOW COLUMNS FROM customers;
 // 等价于
 DESCRIBE customers;
+// 也可以缩写
+DESC customers;
 ```
 
 -   删除整个表
@@ -145,34 +152,35 @@ LIMIT 1;
 
 例:
 
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_price = 2.5;
 ```
 
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_name = 'fuses';
 // MySQL 执行匹配时默认不区分大小写；单引号用来限定字符串
 ```
-```sql
+```mysql
 SELECT vend_id, prod_name
 FROM products
 WHERE vend_id <> 1003;
 ```
 - 范围值检查
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE prod_price BETWEEN 5 AND 10;
 ```
 - 空值检查
-```sql
+```mysql
 SELECT prod_name
 FROM products
 WHERE prod_price IS NULL;
+// 非空用 IS NOT NULL
 ```
 
 **在通过过滤选择出不具有特定值的行时，不会返回具有`NULL`值的行**
@@ -180,12 +188,12 @@ WHERE prod_price IS NULL;
 ## 7. 高级数据过滤
 
 - MySQL允许给出多个`WHERE`子句，需要用`AND`或者`OR`连接
-```sql
+```mysql
 SELECT prod_id, prod_price, prod_name
 FROM products
 WHERE vend_id = 1003 AND prod_price <= 10;
 ```
-```sql
+```mysql
 SELECT prod_name, prod_price
 FROM products
 WHERE vend_id = 1002 OR vend_id = 1003 AND prod_price >= 10;
@@ -194,7 +202,7 @@ WHERE vend_id = 1002 OR vend_id = 1003 AND prod_price >= 10;
 ```
 
 - `IN`操作符
-```sql
+```mysql
 SELECT * FROM Persons
 WHERE LastName IN ('Adams','Carter')
 ```
@@ -283,6 +291,7 @@ WHERE order_num = 20005;
 | `SubString(field, start, length)` | 返回从start开始长为length的子串 |
 |        `Lower() / Upper()`        |        返回串的小写/大写        |
 |        `RTrim() / LTrim()`        |      去除串右边/左边的空格      |
+| 	`REVERSE()`		    |    返回颠倒字符串的结果 |
 
 
 
@@ -322,6 +331,15 @@ WHERE Year(order_date) = 2005 AND Month(order_date) = 9;
 | :-----------: | ------------------------- |
 | `FIRST, LAST` | 返回该列的第一个/最后一个 |
 
+**MySQL 中还有一类流程控制函数**
+
+|    函数名     | 说明                      |
+| :-----------: | ------------------------- |
+| `IF(condition,t,f)` | 如果条件表达式condition是真，返回t；否则返回f |
+| `FNULL(arg1,arg2)`  | 如果arg1不是空，返回arg1，否则返回arg2    |
+| `NULLIF(arg1,arg2)` | 如果arg1=arg2返回`NULL`；否则返回arg1      |
+| `CASE WHEN[test1] THEN [result1]...ELSE [default] END`   | 如果testN是真，则返回resultN，否则返回default |
+| `CASE expr WHEN v1 THEN r1 [WHEN v2 THEN r2] [ELSE rn] END` | 如果expr值等于某个vn，则返回对应位置THEN后面的结果。如果与所有值都不相等，则返回ELSE后面的rn|
 
 
 ## 12. 汇总数据
@@ -404,11 +422,9 @@ VALUES(...), (...), (...);
 ```
 
 
-
 Tips：可以使用 `INSERT LOW_PRIORITY INTO` 来降低`INSERT`语句的优先级，这也适用于`UPDATE`和`DELETE`语句
 
-
-
+　　
 -   插入检索出的数据
 
 ```mysql
