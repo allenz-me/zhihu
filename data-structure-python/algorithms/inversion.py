@@ -40,8 +40,9 @@ def inversions_merge(l :list):
 def inversions_bisect(l: list) -> int:
     ri, res = [], 0
     for i in reversed(range(0, len(l))):
-        res += bisect.bisect_left(ri, l[i])
-        bisect.insort(ri, l[i])
+        bs = bisect.bisect_left(ri, l[i])
+        res += bs
+        ri.insert(bs, l[i])
     return res
 
 
