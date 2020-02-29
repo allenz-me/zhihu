@@ -12,7 +12,7 @@
 
 ## 添加（add）文件，把文件添加到**暂存区**（stage）
 
-`git add $filename`：$filename表示一个文件名。把文件添加到**暂存区**（stage），可被追踪纪录下来。**可多次使用这个方法来添加多个文件**。
+`git add <filename>`：<filename>表示一个文件名。把文件添加到**暂存区**（stage），可被追踪纪录下来。**可多次使用这个方法来添加多个文件**。
 
 `git add -A` ：暂存所有的文件，包括新增加的、修改的和删除的文件。
 
@@ -44,7 +44,7 @@
 
 `git branch` ：列出**本地**当前所有分支。当前分支前面会标有一个 * 号。本地分支不一定包含项目的全部分支。
 
-`git branch $branchName`：创建新分支 
+`git branch <branchName>`：创建新分支 
 
 `git branch -r`：查看**远程**分支列表。
 
@@ -54,13 +54,13 @@
 
 
 
-`git checkout $branchName`：切换分支。 
+`git checkout <branchName>`：切换分支。 
 
-`git checkout -b $branchName`**：** **创建**并**切换**到新的分支，相当于下面两条命令：      `git branch $branchName` + `git checkout $branchName`。
+`git checkout -b $branchName`**：** **创建**并**切换**到新的分支，相当于下面两条命令：      `git branch <branchName>` + `git checkout <branchName>`。
 
 
 
-`git checkout $branchName <file1> <file2>`：将分支下的 file1、file2 文件 合并到本分支（注意此时处在的分支**不是**$branchName） 。**这样做的话相当于只 merge 一部分文件**
+`git checkout <branchName> <file1> <file2>`：将分支下的 file1、file2 文件 合并到本分支（注意此时处在的分支**不是**<branchName>） 。**这样做的话相当于只 merge 一部分文件**
 
 `git checkout -- <file>`：取消对 filename 文件做的修改（ 建议使用`git restore`命令来代替） 
 
@@ -74,27 +74,27 @@
 
 ​    **在 Git 的新版本2.23中，有以下几种新用法：**
 
-**`git switch $branchName`**：切换分支，等价于 `git checkout $branchName`
+**`git switch <branchName>`**：切换分支，等价于 `git checkout $branchName`
 
-**`git switch -c $branchName`**.**切换并创建新的分支** 等价于 `git checkout -b $branchName`
+**`git switch -c <branchName>`**.**切换并创建新的分支** 等价于 `git checkout -b <branchName>`
 
-**`git restore $filename`**： 取消该文件所做的修改，注意不能再恢复回来哦，要么就用`git stash`保留
-
-
+**`git restore <filename>`**： 取消该文件所做的修改，注意不能再恢复回来哦。如果还需要保留曾经的修改，参考`git stash`的使用
 
 
 
-`git merge $branchName` ：合并**指定分支到当前**所在的分支。
 
-`git branch -d $branchName` ：删除分支（一般要在合并完分支之后）
 
-`git branch -D $branchName`：强行删除分支，尤其适用于分支内容有了新的修改但还没有被合并的情况。 
+`git merge <branchName>` ：合并**指定分支到当前**所在的分支。
+
+`git branch -d <branchName>` ：删除分支（一般要在合并完分支之后）
+
+`git branch -D <branchName>`：强行删除分支，尤其适用于分支内容有了新的修改但还没有被合并的情况。 
 
 　　
 
 ## Pull & push
 
-`git push origin $branchName` ：$branchName 是分支名；把该分支上的所有本地提交推送到远程库对应的远程分支上。
+`git push origin <branchName>` ：$branchName 是分支名；把该分支上的所有本地提交推送到远程库对应的远程分支上。
 
 `git checkout <分支> origin/<分支>`： 如果远程有某一个分支而本地没有，该命令将远程的这个分支迁到本地。
 
@@ -139,15 +139,15 @@
 
 `git diff <file>` ：比较当前文件和暂存区文件差异
 
-`git diff <branch1> <branch2>` ： 在两个分支之间比较，会详细地逐个列出文件的差异
+`git diff <branch1> <branch2>` ： 在两个分支之间比较，会**详细地逐个列出文件的差异**
 
-`git diff <branch1> <branch2> --stat`：只列出两个分支间有差异的文件的文件名（相比于上一个命令了来说） 
+`git diff <branch1> <branch2> --stat`：只列出两个分支间有差异的文件的**文件名**（相比于上一个命令了来说） 
 
 `git diff <branch1> <branch2> <file>`：比较两个分支中某一文件的差异，写在左边的分支是旧的，写在右边的是新的
 
 `git diff <commit_id1> <commit_id2> --stat`： 比较两次提交之间的文件差异
 
-在比较的界面用上下箭头前进、后退，按 q 退出比较 
+在比较的界面用上下箭头前进、后退，按 `q` 退出比较 
 
 
 
@@ -157,15 +157,15 @@
 
 `git remote -v`：显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL。 
 
-`git push -u origin master`：关联后，使用该命令第一次推送 master 分支的所有内容，后续再推送的时候就可以省略后面三个参数了，其中参数 u 代表 **上游（upstream**）的意思。
+`git push -u origin master`：关联后，使用该命令第一次推送 master 分支的所有内容，后续再推送的时候就可以省略后面三个参数了，其中参数 u 代表 **上游（upstream）**的意思。
 
 
 
 ## **Log 查看日志**
 
-`git log`：查看项目的提交历史，会列出提交人和提交时间。常用来找到想要回退的版本号
+`git log`：查看项目的提交历史，会列出提交人和提交时间。常用来找到**想要回退的版本号**
 
-`git reflog`：查看每一次命令操作记录。常用来找到未来的版本号（版本回退后） 
+`git reflog`：查看每一次命令操作记录。常用来找到**未来的版本号**（版本回退后） 
 
 `git log --graph`：输出分支合并图。
 
@@ -181,4 +181,4 @@
 
 **可以通过`git log`命令查看以前提交的 commit id.** 
 
-**在版本回退以后是无法通过`git log`查看回退到的版本之后的版本的commit id，这时候要使用git reflog**
+**在版本回退以后是无法通过`git log`查看回退到的版本之后的版本的commit id，这时候要使用`git reflog`**
