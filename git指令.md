@@ -56,7 +56,7 @@
 
 `git checkout <branchName>`：切换分支。 
 
-`git checkout -b $branchName`**：** **创建**并**切换**到新的分支，相当于下面两条命令：      `git branch <branchName>` + `git checkout <branchName>`。
+`git checkout -b <branchName>`**：** **创建**并**切换**到新的分支，相当于下面两条命令：      `git branch <branchName>` + `git checkout <branchName>`。
 
 
 
