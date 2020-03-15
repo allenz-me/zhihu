@@ -157,6 +157,8 @@
 
 `git remote -v`：显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL。 
 
+`git remote add origin`：添加远程仓库并命名为 origin。
+
 `git push -u origin master`：关联后，使用该命令第一次推送 master 分支的所有内容，后续再推送的时候就可以省略后面三个参数了，其中参数 u 代表 **上游（upstream）**的意思。
 
 
@@ -169,6 +171,11 @@
 
 `git log --graph`：输出分支合并图。
 
+
+## **congig 配置项**
+`git config -l`：查看已有配置。
+
+`git config --global/--local`：进行某项配置，可以是全局的，也可以是局部的，如`git config --global user.name "username"`将全局的用户名设置为 username；`git config --local user.email "12345678@qq.com"`设置本仓库的邮件地址为 123456@qq.com
 
 
 ## Reset 版本回退
